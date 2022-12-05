@@ -65,9 +65,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_SYMBOLS] = LAYOUT(
   KC_NO,     KC_F1,   KC_F2,        KC_F3,      KC_F4,         KC_F5,                         KC_F6,         KC_F7,         KC_F8,      KC_F9,      KC_F10,      KC_F11,
-  KC_NO,     KC_PAST, KC_PPLS,      KC_PEQL,    LSFT(KC_SLSH), LSFT(KC_MINS),                 KC_GRV,        LSFT(KC_GRV),  J_HAKL,     J_HAKR,     KC_NO,       KC_F12,
+  KC_NO,     KC_PAST, KC_PPLS,      KC_PEQL,    LSFT(KC_SLSH), LSFT(KC_MINS),                 KC_GRV,        LSFT(KC_GRV),  LALT(KC_8), LALT(KC_9), KC_NO,       KC_F12,
   KC_NO,     KC_EQL,  LSFT(KC_EQL), KC_NUHS,    LSFT(KC_2),    KC_PMNS,                       LSFT(KC_RBRC), LALT(KC_RBRC), LSFT(KC_8), LSFT(KC_9), LALT(KC_2),  KC_NO,
-  KC_NO,     KC_NO,   LSA(KC_7),    LALT(KC_7), LSFT(KC_7),    LALT(KC_4),   KC_NO, KC_NO,    LSFT(KC_COMM), LSFT(KC_DOT),  J_MASL,     J_MASR,     KC_NO,       KC_NO,
+  KC_NO,     KC_NO,   LSA(KC_7),    LALT(KC_7), LSFT(KC_7),    LALT(KC_4),   KC_NO, KC_NO,    LSFT(KC_COMM), LSFT(KC_DOT),  LSA(KC_8), LSA(KC_9),   KC_NO,       KC_NO,
     KC_NO, KC_LALT, KC_LGUI, KC_TRNS, KC_NO,                                                    KC_BSPC, KC_DEL, KC_NO, KC_NO, KC_NO
 ),
 
@@ -274,57 +274,6 @@ bool oled_task_user(void) {
 
 #endif
 
-/* 
-    J_MASL,    007B
-    J_MASR,    007D
-    J_HAKL,    005B
-    J_HAKR,    005D
-    J_PIPE,    007C
-    J_BACKSL   005C
-*/
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-    case J_MASL:
-      if (record->event.pressed) {
-        tap_code(UC(0x007B);
-        return true;
-      }
-      return false;
-    case J_MASR:
-      if (record->event.pressed) {
-        tap_code16();
-        return true;
-      }
-      return false;
-    case J_HAKL:
-      if (record->event.pressed) {
-        send_string("[");
-        return true;
-      }
-      return false;
-    case J_HAKR:
-      if (record->event.pressed) {
-        send_string("]");
-        return true;
-      }
-      return false;
-    case J_PIPE:
-      if (record->event.pressed) {
-        send_string("|");
-        return true;
-      }
-      return false;
-    case J_BACKSL:
-      if (record->event.pressed) {
-        send_string("\\");
-        return true;
-      }
-      return false;
-    default:
-      return true;
-  }
-  return true;
-}
 
 
 
