@@ -103,9 +103,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * L3
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | Esc  |      |      |prn KT|inc KT|dec KT|                    |      |      |      |      |      |      |
+ * | Esc  |      |      |prn KT|inc KT|dec KT|                    |CSA 2 |CSA 4 |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Tab  |      |      |      |      |      |                    |CSA 1 |CSA 2 |CSA 3 |      |      |      |
+ * | Tab  |      |      |      |      |      |                    |CSA 1 |CSA 3 |CSA 7 |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Ctrl |      |      |      |      |      |-------.    ,-------|  <-  | down |  up  |  ->  |      |      |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
@@ -116,8 +116,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 [_ARROWS] = LAYOUT(
-  KC_ESC,    KC_NO,   KC_NO,        DT_PRNT,    DT_UP,         DT_DOWN,                       KC_NO,         KC_NO,         KC_NO,      KC_NO,      KC_NO,       KC_NO,
-  KC_TAB,    KC_NO,   KC_NO,        KC_NO,      KC_NO,         KC_NO,                         MEH(KC_1),     MEH(KC_2),     MEH(KC_3),  KC_NO,      KC_NO,       KC_NO,
+  KC_ESC,    KC_NO,   KC_NO,        DT_PRNT,    DT_UP,         DT_DOWN,                       MEH(KC_2),     MEH(KC_4),     KC_NO,      KC_NO,      KC_NO,       KC_NO,
+  KC_TAB,    KC_NO,   KC_NO,        KC_NO,      KC_NO,         KC_NO,                         MEH(KC_1),     MEH(KC_3),     MEH(KC_7),  KC_NO,      KC_NO,       KC_NO,
   KC_LCTL,   KC_NO,   KC_NO,        KC_NO,      KC_NO,         KC_NO,                         KC_LEFT,       KC_DOWN,       KC_UP,      KC_RGHT,    KC_NO,       KC_NO,
   KC_LSFT,   KC_NO,   KC_NO,        KC_NO,      KC_NO,         KC_NO,       KC_NO, KC_NO,     MEH(KC_LALT),  MEH(KC_9),     MEH(KC_0),  KC_NO,      KC_NO,       KC_NO,
     KC_TRNS, KC_LALT, KC_LGUI, KC_NO, KC_NO,                                                     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
