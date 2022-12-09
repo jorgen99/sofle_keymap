@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,    KC_Q,    KC_W,   KC_E,    KC_R,    KC_T,                       KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,      KC_LBRC,
   KC_LCTL,   KC_A,    KC_S,   KC_D,    KC_F,    KC_G,                       KC_H,    KC_J,    KC_K,    KC_L,   KC_SCLN,   KC_QUOT,
   KC_LSFT,   KC_Z,    KC_X,   KC_C,    KC_V,    KC_B,  RSG(KC_M),  KC_MPLY, KC_N,    KC_M,    KC_COMM, KC_DOT, KC_SLSH,   KC_RSFT,
-        MO(3),  KC_LALT, KC_LGUI, LT(1,KC_ENT),  LT(3,KC_BSPC), LT(2,KC_ESC), RSFT_T(KC_SPC), MO(4), TG(5), OSM(MOD_RCTL|MOD_RSFT|MOD_RGUI)
+        MO(3),  KC_LALT, KC_LGUI, LT(1,KC_ENT),  LT(3,KC_BSPC), LT(2,KC_ESC), RSFT_T(KC_SPC), LT(4,KC_TAB), TG(5), OSM(MOD_RCTL|MOD_RSFT|MOD_RGUI)
 ),
 
 /*
@@ -103,23 +103,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * L3
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | Esc  |      |      |prn KT|inc KT|dec KT|                    |CSA 2 |CSA 4 |      |      |      |      |
+ * | Esc  |      |      |prn KT|inc KT|dec KT|                    |      |CSA 2 |CSA 4 |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Tab  |      |      |      |      |      |                    |CSA 1 |CSA 3 |CSA 7 |      |      |      |
+ * | Tab  |      |      |      |      |      |                    |      |CSA 1 |CSA 3 |CSA 7 |CSA 9 |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Ctrl |      |      |      |      |      |-------.    ,-------|  <-  | down |  up  |  ->  |      |      |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * |LShift|      |      |      |      |      |-------|    |-------|      |CSA 9 |CSA 0 |      |      |      |
+ * |LShift|      |      |      |      |      |-------|    |-------|      |CSA 2 |CSA 0 |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            |      | Alt  |     |      | /       /       \      \  |      |      |      |      |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
 [_ARROWS] = LAYOUT(
-  KC_ESC,    KC_NO,   KC_NO,        DT_PRNT,    DT_UP,         DT_DOWN,                       MEH(KC_2),     MEH(KC_4),     KC_NO,      KC_NO,      KC_NO,       KC_NO,
-  KC_TAB,    KC_NO,   KC_NO,        KC_NO,      KC_NO,         KC_NO,                         MEH(KC_1),     MEH(KC_3),     MEH(KC_7),  KC_NO,      KC_NO,       KC_NO,
+  KC_ESC,    KC_NO,   KC_NO,        DT_PRNT,    DT_UP,         DT_DOWN,                       KC_NO,         MEH(KC_2),     MEH(KC_4),  KC_NO,      KC_NO,       KC_NO,
+  KC_TAB,    KC_NO,   KC_NO,        KC_NO,      KC_NO,         KC_NO,                         KC_NO,         MEH(KC_1),     MEH(KC_3),  MEH(KC_7),  MEH(KC_9),   KC_NO,
   KC_LCTL,   KC_NO,   KC_NO,        KC_NO,      KC_NO,         KC_NO,                         KC_LEFT,       KC_DOWN,       KC_UP,      KC_RGHT,    KC_NO,       KC_NO,
-  KC_LSFT,   KC_NO,   KC_NO,        KC_NO,      KC_NO,         KC_NO,       KC_NO, KC_NO,     MEH(KC_LALT),  MEH(KC_9),     MEH(KC_0),  KC_NO,      KC_NO,       KC_NO,
+  KC_LSFT,   KC_NO,   KC_NO,        KC_NO,      KC_NO,         KC_NO,       KC_NO, KC_NO,     MEH(KC_LALT),  MEH(KC_2),     MEH(KC_0),  KC_NO,      KC_NO,       KC_NO,
     KC_TRNS, KC_LALT, KC_LGUI, KC_NO, KC_NO,                                                     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
 ),
 
