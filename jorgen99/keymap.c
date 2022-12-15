@@ -66,9 +66,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_SYMBOLS] = LAYOUT(
   KC_NO,     KC_F1,         KC_F2,         KC_F3,        KC_F4,      KC_F5,                        KC_F6,         KC_F7,         KC_F8,      KC_F9,      KC_F10,        KC_F11,
-  KC_NO,     LSFT(KC_MINS), KC_PPLS,       KC_PEQL,      LSFT(KC_3), LSFT(KC_SLSH),                KC_GRV,        LSFT(KC_GRV),  RALT(KC_8), RALT(KC_9), LALT(KC_RBRC), KC_F12,
+  KC_NO,     LSFT(KC_MINS), KC_MINS,       LSFT(KC_0),   LSFT(KC_3), LSFT(KC_SLSH),                KC_GRV,        LSFT(KC_GRV),  RALT(KC_8), RALT(KC_9), LALT(KC_RBRC), KC_F12,
   KC_NO,     KC_EQL,        LSFT(KC_EQL),  KC_NUHS,      LSFT(KC_2), KC_PMNS,                      LSFT(KC_RBRC), KC_PAST,       LSFT(KC_8), LSFT(KC_9), RALT(KC_2),    KC_NO,
-  KC_NO,     LSFT(KC_6),    RALT(KC_PPLS), RALT(KC_GRV), LSFT(KC_7), RALT(KC_4),  KC_NO,   KC_NO,  LSFT(KC_COMM), LSFT(KC_DOT),  RALT(KC_7), RALT(KC_0), LSFT(KC_5),    KC_NO,
+  KC_NO,     LSFT(KC_6),    RALT(KC_MINS), RALT(KC_NUBS), LSFT(KC_7), RALT(KC_4),  KC_NO,   KC_NO,  LSFT(KC_COMM), LSFT(KC_DOT),  RALT(KC_7), RALT(KC_0), LSFT(KC_5),    KC_NO,
            KC_NO,    KC_LGUI,          KC_RALT,           KC_TRNS, KC_NO,                          KC_BSPC, KC_DEL,     KC_NO,      KC_NO,    KC_NO
 
 //  KC_NO,     KC_F1,   KC_F2,        KC_F3,      KC_F4,         KC_F5,                         KC_F6,         KC_F7,         KC_F8,      KC_F9,      KC_F10,      KC_F11,
