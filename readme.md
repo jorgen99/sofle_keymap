@@ -24,3 +24,4 @@ qmk compile -kb sofle -km jorgen99
 ```
 qmk c2json -kb sofle -km jorgen99 -o jorgens_sofle/jorgen99_sofle.json jorgens_sofle/jorgen99/keymap.c
 ```
+
