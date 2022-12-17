@@ -50,3 +50,14 @@ for the keymap.
 ```
 qmk c2json -kb sofle -km jorgen99 -o jorgens_sofle/jorgen99_sofle.json jorgens_sofle/jorgen99/keymap.c
 ```
+
+## Layout
+These images are a bit out of date. For a completely accurate
+layout check `jorgen/keymap.c`
+
+![Layer0](layer_0.png)
+![Layer1](layer_1.png)
+![Layer2](layer_2.png)
+![Layer3](layer_3.png)
+![Layer4](layer_4.png)
+![Layer5](layer_5.png)
