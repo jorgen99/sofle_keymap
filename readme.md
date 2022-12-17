@@ -9,7 +9,7 @@ https://config.qmk.fm/#/sofle/rev1/LAYOUT
 The master branch contains the keymap for Mac, the 'win' branch
 contains the same keymap for Windows. On Swedish ISO keybords
 the difference between Mac and Windows keybord layouts are basically
-curly braces, vertical bar and backslash that differ. Also, Alt and Cmd.
+curly braces, vertical bar and backslash. Also, Alt and Cmd.
 
 I flash the Mac version to the left controller and the Windows version
 to the right controller and plug the usb-cable in to the different
@@ -29,7 +29,7 @@ brew install qmk/qmk/qmk
 ```
 
 I have the 'jorgen99' folder in this repo soft linked into
-my qmk dir at `keyboars/sofle/keymaps`
+my qmk dir at `keyboards/sofle/keymaps`
 
 
 ### setup
