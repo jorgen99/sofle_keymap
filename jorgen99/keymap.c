@@ -118,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ARROWS] = LAYOUT(
   KC_ESC,    KC_NO,   KC_NO,        DT_PRNT,    DT_UP,            DT_DOWN,                       KC_NO,         MEH(KC_2),     MEH(KC_4),  KC_NO,      KC_NO,       KC_NO,
   KC_TAB,    KC_NO,   KC_NO,        KC_NO,      KC_NO,            KC_NO,                         KC_NO,         MEH(KC_1),     MEH(KC_3),  MEH(KC_7),  MEH(KC_9),   KC_NO,
-  KC_LCTL,   KC_NO,   KC_NO,        LGUI(KC_MINS), LGUI(KC_SLSH), KC_NO,                         KC_LEFT,       KC_DOWN,       KC_UP,      KC_RGHT,    KC_NO,       KC_NO,
+  KC_LCTL,   KC_NO,   KC_NO,        LGUI(KC_SLSH), LGUI(KC_MINS), KC_NO,                         KC_LEFT,       KC_DOWN,       KC_UP,      KC_RGHT,    KC_NO,       KC_NO,
   KC_LSFT,   KC_NO,   KC_NO,        KC_NO,      KC_NO,            KC_NO,    KC_NO,    KC_NO,     MEH(KC_LALT),  MEH(KC_2),     MEH(KC_0),  KC_NO,      KC_NO,       KC_NO,
                                      KC_TRNS, KC_LALT, KC_LGUI, KC_NO, KC_NO,               KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
 ),

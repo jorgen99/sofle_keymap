@@ -1,5 +1,15 @@
-## QMK Keymap for a sofle v1 keyboard
+## QMK Keymaps for a sofle v1 and a splitkb corne
 The base layer is basically a Swedish ISO layout.
+
+[Sofle v1](https://github.com/josefadamcik/SofleKeyboard) is 6×4+5
+keys column-staggered split keyboard and was the first DIY keyboard
+I built. The code for this keyboard is found in the [jorgen99](jorgen99) folder.
+
+After a while I realised I never use the top number-row on my Sofle, 
+as I have them on the home row on a layer. So the next keyboard I
+built was the [Aurora Corne](https://docs.splitkb.com/hc/en-us/articles/6269789921564-Aurora-Build-Guide-1-Introduction)
+from [splitkb.com](https://splitkb.com/).
+The code for this keyboard is found in the [splitkbcorne](splitkbcorne) folder.
 
 https://docs.qmk.fm/#/
 
@@ -20,7 +30,7 @@ put the following line into config.h to make it work in the windows
 version.
 
 ```
-define MASTER_RIGH
+define MASTER_RIGHT
 ```
 
 ### install qmk
@@ -35,12 +45,26 @@ my qmk dir at `keyboards/sofle/keymaps`
 ### setup
 ```
 qmk setup
+qmk config user.keymap=jorgen99
+```
+
+Link the keymap directories into their keyboard folders in the qmk installation.
+```
+ln -s <this-dir>/jorgen99 <qmk-install-dir>/keyboards/sofle/keymaps/jorgen99
+
+and
+
+ln -s <this-dir>/splitkbcorne <qmk-install-dir>/keyboards/splitkb/aurora/corne/keymaps/jorgen99
 ```
 
 ### compile
 
 ```
 qmk compile -kb sofle -km jorgen99
+
+or
+
+qmk compile -kb splitkb/aurora/corne -km jorgen99
 ```
 
 ### QMK Configurator json from keymap.c
