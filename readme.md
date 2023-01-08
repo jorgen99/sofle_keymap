@@ -1,4 +1,4 @@
-## QMK Keymaps for a sofle v1 and a splitkb corne
+## QMK Keymaps for a sofle v1, a splitkb corne and a cantor.
 The base layer is basically a Swedish ISO layout.
 
 [Sofle v1](https://github.com/josefadamcik/SofleKeyboard) is 6×4+5
@@ -10,6 +10,14 @@ as I have them on the home row on a layer. So the next keyboard I
 built was the [Aurora Corne](https://docs.splitkb.com/hc/en-us/articles/6269789921564-Aurora-Build-Guide-1-Introduction)
 from [splitkb.com](https://splitkb.com/).
 The code for this keyboard is found in the [splitkbcorne](splitkbcorne) folder.
+
+The code for the cantor keyboard is basically the corne minus
+the oled stuff, since the cantor doesn't have any displays.
+The [cantor](https://42keebs.eu/shop/kits/pro-micro-based/cantor-pro-40-low-profile-hotswap-split-ergo-kit/)
+is a 3x6+3 design with a higher vertical stagger for the pinky columns.
+It uses a Black Pill STM32 ARM controller that has enough I/O that there's
+no need for diodes.
+
 
 https://docs.qmk.fm/#/
 
