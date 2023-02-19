@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include QMK_KEYBOARD_H
 
 enum sofle_layers {
@@ -44,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC,    KC_1,    KC_2,   KC_3,    KC_4,    KC_5,                       KC_6,    KC_7,    KC_8,    KC_9,   KC_0,      KC_MINS,
   KC_TAB,    KC_Q,    KC_W,   KC_E,    KC_R,    KC_T,                       KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,      KC_LBRC,
   KC_LCTL,   KC_A,    KC_S,   KC_D,    KC_F,    KC_G,                       KC_H,    KC_J,    KC_K,    KC_L,   KC_SCLN,   KC_QUOT,
-  KC_LSFT,   KC_Z,    KC_X,   KC_C,    KC_V,    KC_B,  RSG(KC_M),  KC_MPLY, KC_N,    KC_M,    KC_COMM, KC_DOT, KC_SLSH,   KC_RSFT,
+  KC_LSFT,   KC_Z,    KC_X,   KC_C,    KC_V,    KC_B,  RSG(KC_M),  KC_MPLY, KC_N,    KC_M,    KC_COMM, KC_DOT, KC_SLSH,   KC_RALT,
         MO(3),  KC_LALT, KC_LGUI, LT(1,KC_ENT),  LT(3,KC_BSPC), LT(2,KC_ESC), RSFT_T(KC_SPC), LT(4,KC_TAB), TG(5), OSM(MOD_RCTL|MOD_RSFT|MOD_RGUI)
 ),
 
@@ -169,6 +170,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, KC_NO, KC_NO, TG(0), KC_BSPC,                                                        KC_PENT, KC_P0, KC_PDOT, KC_TRNS, KC_NO)
 };
 
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(1,KC_ENT):
+            return TAPPING_TERM - 70;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
+
+
 #ifdef ENCODER_ENABLE
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
@@ -202,39 +215,15 @@ static void render_logo(void) {
     oled_write_P(qmk_logo, false);
 }
 
+char tap_term_str[10];
+
 static void print_status_narrow(void) {
     // Print current mode
     oled_write_P(PSTR("\n\n"), false);
-    oled_write_ln_P(PSTR("MODE"), false);
-    oled_write_ln_P(PSTR(""), false);
-    if (keymap_config.swap_lctl_lgui) {
-        oled_write_ln_P(PSTR("MAC"), false);
-    } else {
-        oled_write_ln_P(PSTR("WIN"), false);
-    }
+    oled_write_ln_P(PSTR("TAP-T"), false);
+    sprintf(tap_term_str, "%03d", g_tapping_term);
+    oled_write_ln(tap_term_str, false);
 
-    switch (get_highest_layer(default_layer_state)) {
-        case _QWERTY:
-            oled_write_ln_P(PSTR("Qwrt"), false);
-            break;
-        case _SYMBOLS:
-            oled_write_ln_P(PSTR("Symb"), false);
-            break;
-        case _NUMBERS:
-            oled_write_ln_P(PSTR("Nums"), false);
-            break;
-        case _ARROWS:
-            oled_write_ln_P(PSTR("<-->"), false);
-            break;
-        case _MULTIMEDIA:
-            oled_write_ln_P(PSTR("Mult"), false);
-            break;
-        case _NUMPAD:
-            oled_write_ln_P(PSTR("Nump"), false);
-            break;
-        default:
-            oled_write_P(PSTR("Undef"), false);
-    }
     oled_write_P(PSTR("\n\n"), false);
     // Print current layer
     oled_write_ln_P(PSTR("LAYER"), false);
