@@ -26,9 +26,9 @@ enum jorgen_layers {
 
 #define SWE_LT KC_GRV
 #define SWE_GT LSFT(KC_GRV)
-#define SWE_LBRC LALT(KC_8)
-#define SWE_RBRC LALT(KC_9)
-#define SWE_TILD LALT(KC_RBRC)
+#define SWE_LBRC RALT(KC_8)
+#define SWE_RBRC RALT(KC_9)
+#define SWE_TILD RALT(KC_RBRC)
 
 #define SWE_GRV  KC_EQL
 #define SWE_ACT  LSFT(KC_EQL)
@@ -40,18 +40,18 @@ enum jorgen_layers {
 #define SWE_ASTR LSFT(KC_NUHS)
 #define SWE_LPRN LSFT(KC_8)
 #define SWE_RPRN LSFT(KC_9)
-#define SWE_AT   LALT(KC_2)
+#define SWE_AT   RALT(KC_2)
 
 #define SWE_AMPR LSFT(KC_6)
-#define SWE_BSLS LSA(KC_7)
-#define SWE_PIPE LALT(KC_7)
+#define SWE_BSLS RALT(KC_7)
+#define SWE_PIPE RALT(KC_NUBS
 #define SWE_SLSH LSFT(KC_7)
-#define SWE_DLR  LALT(KC_4)
+#define SWE_DLR  RALT(KC_4)
 
 #define SWE_SCLN LSFT(KC_COMM)
 #define SWE_COLN LSFT(KC_DOT)
-#define SWE_LCBR LSA(KC_8)
-#define SWE_RCBR LSA(KC_9)
+#define SWE_LCBR RALT(KC_7)
+#define SWE_RCBR RALT(KC_0)
 #define SWE_PERC LSFT(KC_5)
 
 #define LSFT1 LSFT(KC_1)
@@ -65,8 +65,8 @@ enum jorgen_layers {
 #define LSFT9 LSFT(KC_9)
 #define LSFT0 LSFT(KC_0)
 
-#define CMD_MINS LGUI(KC_SLSH)
-#define CMD_PLUS LGUI(KC_MINS)
+#define CMD_MINS LCTL(KC_SLSH)
+#define CMD_PLUS LCTL(KC_MINS)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
