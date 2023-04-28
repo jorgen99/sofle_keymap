@@ -25,9 +25,9 @@ enum jorgen_layers {
 
 #define SWE_LT KC_GRV
 #define SWE_GT LSFT(KC_GRV)
-#define SWE_LBRC LALT(KC_8)
-#define SWE_RBRC LALT(KC_9)
-#define SWE_TILD LALT(KC_RBRC)
+#define SWE_LBRC RALT(KC_8)
+#define SWE_RBRC RALT(KC_9)
+#define SWE_TILD RALT(KC_RBRC)
 
 #define SWE_GRV  KC_EQL
 #define SWE_ACT  LSFT(KC_EQL)
@@ -39,18 +39,18 @@ enum jorgen_layers {
 #define SWE_ASTR LSFT(KC_NUHS)
 #define SWE_LPRN LSFT(KC_8)
 #define SWE_RPRN LSFT(KC_9)
-#define SWE_AT   LALT(KC_2)
+#define SWE_AT   RALT(KC_2)
 
 #define SWE_AMPR LSFT(KC_6)
-#define SWE_BSLS LSA(KC_7)
-#define SWE_PIPE LALT(KC_7)
+#define SWE_BSLS RALT(KC_7)
+#define SWE_PIPE RALT(KC_NUBS
 #define SWE_SLSH LSFT(KC_7)
-#define SWE_DLR  LALT(KC_4)
+#define SWE_DLR  RALT(KC_4)
 
 #define SWE_SCLN LSFT(KC_COMM)
 #define SWE_COLN LSFT(KC_DOT)
-#define SWE_LCBR LSA(KC_8)
-#define SWE_RCBR LSA(KC_9)
+#define SWE_LCBR RALT(KC_7)
+#define SWE_RCBR RALT(KC_0)
 #define SWE_PERC LSFT(KC_5)
 
 #define LSFT1 LSFT(KC_1)
@@ -64,8 +64,8 @@ enum jorgen_layers {
 #define LSFT9 LSFT(KC_9)
 #define LSFT0 LSFT(KC_0)
 
-#define CMD_MINS LGUI(KC_SLSH)
-#define CMD_PLUS LGUI(KC_MINS)
+#define CMD_MINS LCTL(KC_SLSH)
+#define CMD_PLUS LCTL(KC_MINS)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
@@ -75,17 +75,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Ctrl |   A  |   S  |   D  |   F  |   G  |                    |   H  |   J  |   K  |   L  |   Ö  |  Ä   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |LShift|   Z  |   X  |   C  |   V  |   B  |-------.    .-------|   N  |   M  |   ,  |   .  |   -  | Alt  |
+ * |LShift|   Z  |   X  |   C  |   V  |   B  |-------.    .-------|   N  |   M  |   ,  |   .  |   -  | Win  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                          |     | L1   | / L3    /       \ L2   \  | RShft|  L4  |
+ *                          |  Alt | L1   | / L3    /       \ L2   \  | RShft|  L4  |
  *                          |      | Enter|/ Bsp   /         \ Esc  \ | Spc  |  Tab |
  *                          `--------------------'           '------''--------------'
  */
 [_QWERTY] = LAYOUT_split_3x6_3(
   KC_TAB,  KC_Q, KC_W, KC_E, KC_R, KC_T,            KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_LBRC,
   KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G,            KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, KC_QUOT,
-  KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,            KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_LALT,
-                     KC_LGUI, L1_ENT, L3_BSP,    L2_ESC, SFT_SPC, L4_TAB
+  KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,            KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_LGUI,
+                     KC_LALT, L1_ENT, L3_BSP,    L2_ESC, SFT_SPC, L4_TAB
 ),
 
 /*
@@ -105,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, SWE_QUES, SWE_PLUS, SWE_EQL,  SWE_HASH, SWE_UNDS,          SWE_LT,   SWE_GT,   SWE_LBRC, SWE_RBRC, SWE_TILD, _______,
   _______, SWE_GRV,  SWE_ACT,  SWE_QUOT, SWE_DQUO, SWE_MINS,          SWE_CIRC, SWE_ASTR, SWE_LPRN, SWE_RPRN, SWE_AT,   _______,
   _______, SWE_AMPR, SWE_BSLS, SWE_PIPE, SWE_SLSH, SWE_DLR,           SWE_SCLN, SWE_COLN, SWE_LCBR, SWE_RCBR, SWE_PERC, _______,
-                                     KC_LGUI, _______, _______,   KC_BSPC, KC_DEL,  _______
+                                     _______, _______, _______,   KC_BSPC, KC_DEL,  _______
 ),
 
 /*
@@ -145,7 +145,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  _______, _______, DT_PRNT,  DT_UP,    DT_DOWN,                 _______, MEH(KC_1), MEH(KC_3), MEH(KC_7), MEH(KC_9), _______,
   KC_LCTL, _______, _______, CMD_MINS, CMD_PLUS, _______,                 KC_LEFT, KC_DOWN,   KC_UP,     KC_RGHT,   _______,   _______,
   KC_LSFT, _______, _______, _______,  _______,  _______,                 _______, _______,   MEH(KC_2), MEH(KC_0), _______,   _______,
-                                     KC_LGUI, _______, _______,       _______, _______, _______
+                                     _______, _______, _______,       _______, _______, _______
 ),
 
 /*

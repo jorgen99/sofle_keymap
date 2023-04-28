@@ -24,8 +24,8 @@ enum jorgen_layers {
 #define SWE_HASH LSFT(KC_3)
 #define SWE_UNDS LSFT(KC_SLSH)
 
-#define SWE_LT KC_GRV
-#define SWE_GT LSFT(KC_GRV)
+#define SWE_LT KC_NUBS
+#define SWE_GT LSFT(KC_NUBS)
 #define SWE_LBRC RALT(KC_8)
 #define SWE_RBRC RALT(KC_9)
 #define SWE_TILD RALT(KC_RBRC)
@@ -43,8 +43,8 @@ enum jorgen_layers {
 #define SWE_AT   RALT(KC_2)
 
 #define SWE_AMPR LSFT(KC_6)
-#define SWE_BSLS RALT(KC_7)
-#define SWE_PIPE RALT(KC_NUBS
+#define SWE_BSLS RALT(KC_MINS)
+#define SWE_PIPE RALT(KC_NUBS)
 #define SWE_SLSH LSFT(KC_7)
 #define SWE_DLR  RALT(KC_4)
 
