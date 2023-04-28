@@ -12,12 +12,13 @@
 
   https://docs.qmk.fm/#/tap_hold?id=tap-or-hold-decision-modes
 */
-#define PERMISSIVE_HOLD
+// #define PERMISSIVE_HOLD
+#define HOLD_ON_OTHER_KEY_PRESS
 
 #ifdef TAPPING_TERM
     #undef TAPPING_TERM
     #define TAPPING_TERM 200
 #endif
 
-#define TAPPING_TERM_PER_KEY
+// #define TAPPING_TERM_PER_KEY
 
