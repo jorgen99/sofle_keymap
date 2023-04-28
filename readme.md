@@ -5,7 +5,7 @@ The base layer is basically a Swedish ISO layout.
 keys column-staggered split keyboard and was the first DIY keyboard
 I built. The code for this keyboard is found in the [jorgen99](jorgen99) folder.
 
-After a while I realised I never use the top number-row on my Sofle, 
+After a while I realised I never use the top number-row on my Sofle,
 as I have them on the home row on a layer. So the next keyboard I
 built was the [Aurora Corne](https://docs.splitkb.com/hc/en-us/articles/6269789921564-Aurora-Build-Guide-1-Introduction)
 from [splitkb.com](https://splitkb.com/).
@@ -93,3 +93,4 @@ layout check `jorgen/keymap.c`
 ![Layer3](layer_3.png)
 ![Layer4](layer_4.png)
 ![Layer5](layer_5.png)
+
