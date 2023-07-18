@@ -190,6 +190,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 )
 };
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(1,KC_ENT):
+            return TAPPING_TERM - 70;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 #ifdef OLED_ENABLE
 
 char tap_term_str[10];
@@ -246,10 +255,9 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 }
 
 bool oled_task_user(void) {
-  if (is_keyboard_master()) {
-    print_status_narrow();
+  if (! is_keyboard_master()) {
   } else {
-    oled_write_ln_P(PSTR("Biff"), false);
+    print_status_narrow();
     //render_logo();
   }
   return false;
