@@ -248,18 +248,20 @@ static void print_status_narrow(void) {
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-  if (is_keyboard_master()) {
-    return OLED_ROTATION_270;
-  }
-  return rotation;
+  return OLED_ROTATION_270;
+  // if (is_keyboard_master()) {
+  //   return OLED_ROTATION_270;
+  // }
+  // return rotation;
 }
 
 bool oled_task_user(void) {
-  if (! is_keyboard_master()) {
-  } else {
-    print_status_narrow();
-    //render_logo();
-  }
+  print_status_narrow();
+  // if (is_keyboard_master()) {
+  // }
+  // else {
+  //   print_status_narrow();
+  // }
   return false;
 }
 
