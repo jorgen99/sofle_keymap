@@ -190,19 +190,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 )
 };
 
+
+// Tapping and stuff
+// https://github.com/qmk/qmk_firmware/blob/master/docs/tap_hold.md
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(1,KC_ENT):
             return TAPPING_TERM - 70;
+        case RSFT_T(KC_SPC):
+            return TAPPING_TERM + 70;
         default:
             return TAPPING_TERM;
+    }
+}
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(1, KC_ENT):
+            // Immediately select the hold action when another key is pressed.
+            return true;
+        case RSFT_T(KC_SPC):
+            // Immediately select the hold action when another key is pressed.
+            return true;
+        default:
+            // Do not select the hold action when another key is pressed.
+            return false;
     }
 }
 
 #ifdef OLED_ENABLE
 
 char tap_term_str[10];
-
 
 /*static void render_logo(void) {
   static const char PROGMEM qmk_logo[] = {
